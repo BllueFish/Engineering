@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Created by @ShinCurry -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 260 30"  xml:space="preserve">
+<style type="text/css">
+	.dot{fill:#6A6969;}
+	.big-dot{fill:#FF9900;}
+
+</style>
+
+<g id="Loading..._1">
+	<circle id="dot_1" class="dot" cx="14" cy="17.5" r="9"/>
+	<circle id="dot_2" class="dot" cx="47" cy="17.5" r="9"/>
+	<circle id="dot_3" class="dot" cx="80" cy="17.5" r="9"/>
+	<circle id="dot_4" class="dot" cx="113" cy="17.5" r="9"/>
+	<circle id="dot_5" class="dot" cx="146" cy="17.5" r="9"/>
+	<circle id="dot_6" class="dot" cx="179" cy="17.5" r="9"/>
+	<circle id="dot_7" class="dot" cx="212" cy="17.5" r="9"/>
+	<circle id="dot_8" class="dot" cx="245" cy="17.5" r="9"/>
+	<circle id="bigDot" class="big-dot" cx="-19" cy="17.5" r="13"/>
+</g>
+
+<animate
+	id="dot-move"
+	xlink:href="#bigDot"
+	attributeName="cx"
+	values="14; 47; 80; 113; 146; 179; 212; 245; 212; 179; 146; 113; 80; 47; 14"
+	dur="8.4s"
+	calcMode="spline"
+	keyTimes="0;0.07142;0.14284;0.21426;0.28568;0.3571;0.42852;0.49994;0.57136;0.64278;0.7142;0.78562;0.85704;0.92846;1"
+	keySplines=".36,1.61,.68,.83; .36,1.61,.68,.83; .36,1.61,.68,.83;.36,1.61,.68,.83; .36,1.61,.68,.83; .36,1.61,.68,.83;.36,1.61,.68,.83; .36,1.61,.68,.83; .36,1.61,.68,.83; .36,1.61,.68,.83; .36,1.61,.68,.83; .36,1.61,.68,.83; .36,1.61,.68,.83; .36,1.61,.68,.83"
+
+	repeatCount="indefinite"
+
+/>
+
+//
+
+<!-- <animate
+	id="dot-move-end"
+	xlink:href="#bigDot"
+	attributeName="cx"
+	begin="dot-move.end"
+	dur="0.8s"
+	by="33"
+	calcMode="spline"
+	keyTimes="0; 1"
+	keySplines=".36,1.61,.68,.83"
+	accumulate="sum"
+	fill="freeze"
+/>
+<animate
+	id="dot-smaller"
+	xlink:href="#bigDot"
+	attributeName="r"
+	begin="dot-end.end"
+	dur="1.2s"
+	to="1"
+	fill="freeze"
+	additive="sum"
+/>
+ -->
+
+
+</svg>

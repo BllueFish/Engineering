@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重庆理工大学第八届十佳大学生评选</title>
+    <link href="headerstyle.css" rel="stylesheet">
+    <link href="footerstyle.css" rel="stylesheet">
+    <link href="contentstyle.css" rel="stylesheet">
+    <script>
+        //淡出效果
+        function fadeOut(){
+            var speed =  150;
+            var val = 100;
+            var val1 = 1;
+            //循环将透明值以10（0.1）递减,即淡出效果
+            function m() {
+                val -= 10;
+                val1 -= 0.1;
+                if (val >= 0 || val1 >= 0) {
+                    document.getElementById("load").style.opacity = val1;
+                    document.getElementById("load").style.filter = " alpha(opacity ="+ val+")";
+                    setTimeout(m, speed);
+                } else if (val < 0 || val1 < 0) {
+                    //元素透明度为0后隐藏元素
+                    document.getElementById("load").style.display = "block";
+                   document.getElementById("load").style.zIndex = 0;
+                }
+            }
+            m();
+        }
+        function remove(){
+            fadeOut();
+        }
+        setTimeout(remove, 2900);
+
+    </script>
+</head>
+<body>
+<!--加载页面-->
+<!--<div id="load">
+    <div style="position: relative; top:250px;">
+        <div class="logo-pic" id="logo-cfc"></div>
+        <div class="logo-pic" id="loadstar"></div>
+    </div>
+</div>-->
+<!--提交警告-->
+<div id="error" >
+    <div  id="e_content"></div>
+    <div id="e_button" onclick="hiden1()">马上去改</div>
+</div>
+<!--温馨提示-->
+<div id="tips">
+   <div id="outsidetips"></div>
+    <div id="tip">
+        <div id="t_title">
+            Tip
+        </div>
+        <div id="t_content">
+            温馨提示：您在选择好候选人后在网站右下角提交选票。
+            您选择的候选人不能小于8名，不能大于10名。
+        </div>
+        <div id="t_button" onclick="hiden()">
+            知道了
+        </div>
+    </div>
+</div>
+<!--投票排名榜-->
+<div id="RankingList" style="display: none;" onclick="RL_hidden()">
+    <div id="bg_RL1"></div>
+     <div id="InRL">
+         <table>
+             <tr>
+                 <td>
+                     <div class="RL_title">网络投票</div>
+                     <ul>
+                         <li>
+                             <span class="RL_num">1</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">2</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">3</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">4</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">5</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">6</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">7</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">8</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">9</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">10</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">11</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">12</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">13</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">14</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">15</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                     </ul>
+                 </td>
+                 <td>
+                     <div class="RL_title">手机投票</div>
+                     <ul>
+                         <li>
+                             <span class="RL_num">1</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">2</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">3</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">4</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">5</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">6</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">7</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">8</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">9</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">10</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">11</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">12</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">13</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">14</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">15</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                     </ul>
+                 </td>
+                 <td>
+                     <div class="RL_title">现场投票</div>
+                     <ul>
+                         <li>
+                             <span class="RL_num">1</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">2</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">3</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">4</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">5</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">6</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">7</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">8</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">9</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num">10</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">11</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">12</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">13</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">14</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                         <li>
+                             <span class="RL_num1">15</span>
+                             <span class="RL_name">唐浩</span>
+                             <spam class="RL_votenum">22222</spam>
+                         </li>
+                     </ul>
+                 </td>
+             </tr>
+         </table>
+     </div>
+    <div id="bg_RL2"></div>
+</div>
+<!--网页头部-->
+<div id="header">
+    <div style="cursor: pointer;" onclick="RL_onclick()">
+        <img src="images/littlenote.png" alt="小便签" style="width:7.6%; height:18%; position:absolute; top:9%; left:6.6%; z-index: 99;"/>
+        <img src="images/十佳标志.png" alt="十佳标志" style=" z-index: 300; position:absolute; top:13%; left:8%; height:9.7%; "/>
+    </div>
+    <div id="bigtitle">
+        <img class="title" src="images/title.png" alt="大标题">
+    </div>
+    <div class="tengcao"></div>
+</div>
+<!--主要内容-->
+<div id="content">
+    <div id="note">
+    <h3 style="position:relative;top:50px;left:20px;">活动简介：</h3>
+    <p style="position:relative;top:60px;left:50px;text-indent:20px;">
+    为大力弘扬社会主义核心价值观，引导和激励大学生立志成才、刻苦学习、创新创业、奉献社会、报效祖国，展示当代大学生风采，
+    进一步发挥优秀大学生的示范作用，促进我校优良校风、学风建设，重庆理工大学党委学生工作部组织开展2014年第七届重庆理工大学“十佳大学生”评选活动。经过
+    学院推荐和我校大学生现场投票评选，共产生15名候选人。现将候选人先进事迹材料进行展示，热烈欢迎全校师生积极参与2014年重庆理工大学“十佳大学生”评选投票
+    ，为心目中的“十佳大学生”投上宝贵一票，因为有你们的支持，他们才能更加璀璨！</p>
+    <h3 style="position:relative;top:80px;left:20px;">投票方式：</h3>
+    <p style="position:relative;top:90px;left:50px;text-indent:20px;">投票途径可通过<b>网络投票</b>、<b>手机二维码投票</b>、<b>现场投票</b>三种方式进行。为保证评选的公平公正，无论何种形式投票，每张选票（每次投票）评选
+    的候选人不得多于10人。现场投票结果将每天晚上8点在2014“十佳大学生”官方投票网站上公布；网络投票和手机二维码投票结果在网站上实时公布。</p>
+    <h3 style="position:relative;top:120px;left:20px;">投票时间：2015.10.18-2015.10.30</h3>
+    <h3 style="position:relative;top:93px;left:663px;width:300px;">
+    <a href="../往年十佳/index1.html"target="_blank">第六届十佳</a>&nbsp;|&nbsp;<a href="../往年十佳/index.html" target="_blank">第七届十佳</a>&nbsp;|&nbsp;<a href="活动详情.html"target="_blank">活动详情</a></h3>
+    </div>
+
+    <div class="intr">
+        <div class="person people1">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+            <div class="aboutself">
+                <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+                专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+            </div>
+            <div class="rongru">
+                <span>获奖情况:</span><br/>
+                2014国家奖学金<br/>
+                2012重庆市“优秀学生干部”称号<br/>
+                2013重庆市“精神文明先进个人”称号<br/>
+                2012重庆理工大学“文艺活动先进个人”称号<br/>
+                </div>
+            </div>
+            <div class="vote" >
+                <img class="zhichi"src="images/button.png"alt="投票">
+                <p>电子信息与自动化学院</p>
+            </div>
+        </div>
+        <div class="person people2">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+    </div>
+    <div class="intr">
+        <div class="person people1">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+        <div class="person people2">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+    </div>
+    <div class="intr">
+        <div class="person people1">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+        <div class="person people2">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+    </div>
+    <div class="intr">
+        <div class="person people1">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div  class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+        <div class="person people2">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+    </div>
+    <div class="intr">
+        <div class="person people1">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+        <div class="person people2">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+    </div>
+    <div class="intr">
+        <div class="person people1">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+        <div class="person people2">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+    </div>
+    <div class="intr">
+        <div class="person people1">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+        <div class="person people2">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+    </div>
+    <div class="intr">
+        <div class="person people1">
+        <img class="hot"src="images/hot.png"alt="hot标签">
+        <a href="个人介绍.html"target="_blank"><div class="photo"></div></a>
+        <div class="jianjie">
+        <div class="aboutself">
+        <span class="name">李中灿竹</span>，女，汉族，中共党员，四川遂宁人。现为重庆理工大学车辆工程学院装甲车辆工程
+        专业2011级学生，曾任车辆工程学院学生会副主席、文娱部部长、班级团支书，现任校友交流社副社长。
+        </div>
+        <div class="rongru">
+        <span>获奖情况:</span><br/>
+        2014国家奖学金<br/>
+        2012重庆市“优秀学生干部”称号<br/>
+        2013重庆市“精神文明先进个人”称号<br/>
+        2012重庆理工大学“文艺活动先进个人”称号<br/>
+        </div>
+        </div>
+        <div class="vote">
+        <img class="zhichi"src="images/button.png"alt="投票">
+        <p>车辆工程学院</p>
+        </div>
+        </div>
+        <div class="person people2"style="overflow:hidden;position:relative;top:-210px;">
+            <div id="votebox">
+                <div id="v_title">
+                提交选票
+                </div>
+            <div id="v_code">
+                <img id="code"style="width:70px;height:30px;"/><a href="#" >看不清，换一个</a>
+                <input type="text"id="inputCode"placeholder="请输入验证码"/>
+            </div>
+            <div id="submit" onclick="judgeSelected()">提交</div>
+            <div id="v_names">
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--网页尾部-->
+<div id="footer">
+   <div class="littlebox">
+        <p>主办方：重庆理工大学党委学生工作部、学生工作处</p>
+        <p>技术支持：<a href="http://www.crazyforcode.org">重庆理工CFC团队</a>
+            <a href="http://weibo.com/crazyforcode">微博</a>
+        </p>
+        <h5 >最终解释权归重庆理工大学</h5>
+   </div>
+    <img class="qr_code" src="images/qr_code.png" alt="CFC官方二维码"/>
+</div>
+<script src="action.js"></script>
+<script src="centercontent.js"></script>
+</body>
+</html>

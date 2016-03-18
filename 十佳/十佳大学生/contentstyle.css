@@ -1,0 +1,201 @@
+/*欢迎观看鄙人代码，希望大家多多指教。联系方式：2220867497
+   づ￣ 3￣)づ  CFC团队欢迎您的加入！ 新群qq：397043572
+    期待您的加入，能让CFC变的更好，能让您自己变的更好！
+
+       我们不是码农，我们是生活的艺术家！*/
+
+#note{
+    background-image:url(images/node.png);
+    background-repeat:no-repeat;
+    width:1000px;
+    height: 403px;
+    margin:auto;
+    font-size: 15px;
+    color: #808080;
+    text-align: justify;
+}
+#note p{
+    width:890px;
+}
+#note a:link ,a:visited{
+    text-decoration:none;
+    color: #808080;
+}
+
+#note a:hover{
+    color: #B4F021;
+}
+#content{
+    width: 100%;
+    margin:auto;
+    position: relative;
+}
+a{
+    text-decoration:none;
+}
+.intr{
+    width:1100px;
+    height:410px;
+    text-align:center;
+    margin:auto;
+    color:#808080;
+    position: relative;
+    font-size:14px;
+}
+.person{
+    display:inline-block;
+    width:500px;
+    height:410px;
+    background-image:url("images/people.png");
+    background-repeat:no-repeat;
+}
+.intr .people2,.intr .people1{
+    display:inline-block;
+    width:500px;
+    height:410px;
+    background-image:url("images/people.png");
+    background-repeat:no-repeat;
+}
+.intr .hot{
+    position:relative;
+    left:-200px;
+    z-index:120;
+}
+.intr .photo{
+    background:url(images/personOne.png);
+    background-repeat: no-repeat;
+    width:180px;
+    height:250px;
+    position:relative;
+    left:25px;
+    top:-70px;
+    z-index:99;
+}
+.intr .jianjie{
+    width:260px;
+    height:220px;
+    position:relative;
+    top:-325px;
+    left:220px;
+}
+.jianjie .aboutself{
+    height: 115px;
+    text-indent:20px;
+    text-align:justify;
+}
+.jianjie .rongru{
+    text-align:justify;
+    line-height:25px;
+    font-size: 13px;
+    font-weight:600;
+    color:black;
+    margin-top:8px;
+}
+.jianjie span{
+    font-weight:600;
+    font-size:16px;
+    color:#808080;
+}
+.intr .people1 .vote{
+    position:absolute;
+    top:340px;
+    left:90px;
+}
+.intr .people2 .vote{
+    position:absolute;
+    top:340px;
+    left:590px;
+}
+.intr .vote img{
+    width:120px;
+    height:50px;
+    display:inline-block;
+    border-radius:5px;
+    cursor:pointer;
+}
+.intr .vote .zhichi{
+    width:110px;
+    height:45px;
+}
+.intr .vote p{
+    font-weight:700;
+    font-size:25px;
+    display:inline-block;
+    position:relative;
+    top:-16px;
+    left:20px;
+}
+#votebox{
+    height:110%;
+    background: url(images/bg_votebox.png);
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    position:relative;
+    top:35px;
+    left:21px;
+}
+#votebox #v_title {
+    font-size: 30px;
+    font-weight: 900;
+    color: cadetblue;
+    padding-top:50px;
+    margin-left: -40px;
+}
+#votebox #v_code{
+    width:200px;
+    margin-top: 25px;
+    margin-left:129px;
+}
+#votebox #v_code a:link ,a:visited{
+    color:cadetblue;
+    font-size: 15px;
+    position: relative;
+    top:-10px;
+    left:5px;
+    text-decoration: none;
+}
+#votebox #v_code a:hover{
+    color: chartreuse;
+}
+#votebox #v_code #inputCode{
+    display: block;
+    color:#808080;
+    position: relative;
+    margin-top: 15px;
+    left:15px;
+}
+#votebox #submit{
+    width:100px;
+    height: 40px;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    background:#4CC056;
+    font-size: 19px;
+    font-weight: 500;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+    left:180px;
+    margin-top: 30px;
+    cursor:pointer;
+}
+#votebox #v_names{
+    width:460px;
+    height:60px;
+    background-color: #000000;
+    opacity: 0.4;
+    -moz-opacity: 0.4;
+    filter: alpha(opacity = 40);
+    color: #ffffff;
+    position: relative;
+    top:39px;
+    -moz-border-radius-bottomleft: 15px;
+    -moz-border-radius-bottomright: 15px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px
+}
+
